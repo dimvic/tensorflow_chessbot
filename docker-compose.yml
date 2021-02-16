@@ -1,0 +1,12 @@
+version: '3.0'
+
+services:
+  fen_generator:
+    container_name: fen_generator
+    build: .
+    volumes:
+      - ./run_generator.sh:/tcb/run_generator.sh
+      - ./auth_config.py:/tcb/auth_config.py
+      - ./images:/images
+    entrypoint:
+      - /tcb/run_generator.sh
